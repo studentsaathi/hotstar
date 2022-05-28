@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    
+    <nav id="navbar">
+
+        <ul id="menu">
+            <li><h1>Home</h1></li>
+            <li><h1>New Movies</h1></li>
+            <li>
+
+                
+               
+                    <input type="text" oninput="debouncFunction(main,1000)" id="query" placeholder="Enter Movies Name">
+                  
+                
+            
+            </li>
+            <li><h1>Login</h1></li>
+            <li><h1>Sign</h1></li>
+        </ul>
+        
+    
+    
+    </nav>
+    <ul class="manul">
+        
+        <li>
+            
+           
+           
+            <div id="lastest"></div>
+
+
+        </li>
+    </ul>
+     <div id="slide"></div>
+     <div id="homeshow">
+        <div id="last">
+            <h1>Latest & Trending</h1>
+   
+        </div>
+        <div id="sports">
+            <h1>Best in Sports</h1>
+        </div>
+        <div id="popular">
+            <h1>Popular Shows</h1>
+        </div>
+        <div id="Recommended">
+            <h1>Movies Recommended For You</h1>
+        </div>
+     </div>
+
+<script>
+    var navbar=document.getElementById("navbar");
+     var menu =document.getElementById("menu")
+
+        window.onscroll=function(){
+         if(window.pageYOffset>=menu.offsetTop){
+             navbar.classList.add("sticky");
+         }
+         else{
+            navbar.classList.remove("sticky") ;
+         }
+
+     }
+
+</script>
+    
+    
+</body>
+</html>
+<script src="index.js"></script>
+<script>
+
+    let ads = [
+    {img:"https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/4159/1254159-h-7ab4eb3a7a92"},
+    {img:"https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/5210/1165210-h-a72a0a95461e"},
+    {img:"https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/1517/1161517-h-c376fd164ba2"},
+    {img:"https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/4515/1074515-h-e3467da993bd"},
+    {img:"https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/1517/1161517-h-c376fd164ba2"}
+]
+let i=0;
+let append=document.getElementById("slide");
+function ad()
+{    var img=document.createElement("img")
+    img.src=ads[0].img;
+    append.append(img)
+     
+    setInterval(function(){
+        if(i==ads.length)
+        {
+            i=0;
+        }
+        img.src=ads[i].img;
+       i++
+    }, 3000);
+  
+}
+
+ad();
+
+</script>

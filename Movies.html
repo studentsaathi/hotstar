@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New MOVIES</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #ditil{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        #ditil>div{
+            border-radius: 10px;
+            margin-bottom: 30px;
+            background-color: black;
+            
+            color: aliceblue;
+            height: 700px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+        }
+        #ditil>div>img{
+            border-radius: 10px;
+            height: 500px;
+            width: 100%;
+        }
+        #ditil>div>p{
+            color: red;
+            font-size: 20px;
+        }
+        #ditil>div>h1{
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+
+        <ul id="menu">
+            <li><a href="index.html"><h1>Home</h1></a></li>
+            <li><a href="Movies.html"><h1>New Movies</h1></a></li>
+            <li>
+
+                
+               
+                    <input type="text" oninput="debouncFunction(main,1000)" id="query" placeholder="Enter Movies Name">
+                  
+                
+            
+            </li>
+            <li><h1>Login</h1></li>
+            <li><h1>Sign</h1></li>
+        </ul>
+        
+    
+    
+    </nav>
+    <div id="ditil">
+
+    </div>
+
+    
+</body>
+</html>
+<script src="Movies.js"></script>

@@ -1,5 +1,5 @@
 let id;
-let movies_div=document.getElementById("lastest")
+let movies_div=document.getElementById("ditil")
 
 
  async function searchMovies(q){
@@ -8,7 +8,7 @@ let movies_div=document.getElementById("lastest")
     let res= await fetch (url)
     let data= await res.json();
     return data.Search;
-    //console.log(data);
+    console.log(data);
 
    }
    catch(error){
@@ -26,14 +26,18 @@ function appendMovies (movies){
     }
     movies.forEach(function(el){
         let p=document.createElement("p")
-        p.innerText=el.Title;
+        p.innerText=`Year of release :-${el.Year}`
+        let rating=document.createElement("p")
+        rating.innerText=`imdb rating :-${el.imdbID}`
         //div.append(p)
         let img=document.createElement("img")
         img.src=el.Poster;
+        let name=document.createElement("h1")
+        name.innerText=el.Title;
         
         let div=document.createElement("div")
        // div.id="mov"
-        div.append(img,p)
+        div.append(name,img,p,rating)
         movies_div.append(div)
     });
 
@@ -60,40 +64,3 @@ function debouncFunction(func,delay){
     },delay);
 
 }
-
-
-//div show//
-
-
-
-
-const url='https://www.omdbapi.com/?s=hero&apikey=c980f154';
-fetch(url)
-.then(function(res){
-    return res.json();
-})
-.then(function(res){
-    appendend(res);
-    console.log(res);
-})
-.catch(function(err){
-    console.log(err);
-})
-
-// console.log("res",res)
-function appendend(data){
-    let newmovies=document.getElementById("newmovies")
-    
-   for(let i=0;i<10;i++){
-
-       i++
-        let divf=document.createElement("div");
-        let superimg=document.createElement("img");
-
-        superimg.src=data.Search[i].Poster;
-        i++
-        divf.append(superimg)
-        newmovies.append(divf)
-}}
-
-
